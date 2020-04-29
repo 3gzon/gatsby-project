@@ -1,0 +1,28 @@
+$white:                       #ffffff;
+$black:                       #000000;
+
+
+
+
+$colors-list:(
+        
+'white':                        $white,
+'black':                        $black,
+
+
+);
+
+
+@each $key,$val in $colors-list{
+    .bg-#{$key}{
+        background-color: #{$val}!important;
+    }
+
+    .text-#{$key}{
+        color: #{$val}!important;
+    }
+
+    .border-#{$key}{
+        border-color: #{$val}!important;
+    }
+}
