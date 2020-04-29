@@ -6,6 +6,7 @@
 @import 'components/header';
 @import 'components/navigation';
 @import 'components/footer';
+@import 'components/video';
 
 //Pages
 @import 'pages/home';
@@ -14,6 +15,16 @@
 @import 'pages/contact';
 @import 'pages/about';
 
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.75);
+}
 
 h1 {
     color: red;

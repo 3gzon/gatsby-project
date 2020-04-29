@@ -1,5 +1,6 @@
 .cd-slider-nav {
     text-align: center;
+    z-index: 2 !important;
 
     ul {
         padding: 0;
@@ -52,7 +53,7 @@
 }
 
 .cd-hero {
-    z-index: 2;
+    z-index: 2 !important;
     position: relative;
     -webkit-font-smoothing: antialiased;
 }

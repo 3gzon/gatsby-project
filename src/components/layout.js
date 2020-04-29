@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Footer from './Footer'
 import Header from "./header"
 import '../styles/base.scss'
+import Video from "./Video"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,7 +25,9 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div className="container">
+    <div>
+      <div className="overlay"></div>
+      <Video />
       <Header siteTitle={data.site.siteMetadata.title} />
       <div className="cd-hero">
         <main>{children}</main>

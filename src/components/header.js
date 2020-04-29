@@ -4,7 +4,7 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div className="header bg-black">
+      <div className="header">
         <div className="container">
           <Navigation />
         </div>
