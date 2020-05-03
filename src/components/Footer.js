@@ -2,13 +2,15 @@ import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 
 const Footer = props => (
-
-    <h3>Hello from footer</h3>
+  <footer>
+    <p>Copyright &copy; 2020 Your Company
+        	| Designed by <em>Template Mo</em></p>
+  </footer>
 );
 
 export default props => (
-    <StaticQuery
-        query={graphql`
+  <StaticQuery
+    query={graphql`
       query {
         site {
           siteMetadata {
@@ -17,6 +19,6 @@ export default props => (
         }
       }
     `}
-        render={data => <Footer data={data} />}
-    />
+    render={data => <Footer data={data} />}
+  />
 );

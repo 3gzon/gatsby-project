@@ -1,0 +1,37 @@
+.fourth-slide {
+    text-align: center;
+    background-color: #fff;
+    width: 100%;
+
+    .heading {
+        h1 {
+            margin-top: 30px;
+            font-size: 38px;
+            text-transform: uppercase;
+            color: #fff;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        span {
+            font-size: 16px;
+            text-transform: uppercase;
+            color: #ffbb05;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+    }
+
+    .fourth-content {
+        padding: 15px 30px;
+
+        .project-item {
+            margin: 15px 0px;
+        }
+
+        img {
+            width: 100%;
+            overflow: hidden;
+        }
+    }
+}
