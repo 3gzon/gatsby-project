@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, StaticQuery, Link } from 'gatsby';
-import logoLinks from '../images/gatsby-icon.png';
+// import logoLinks from '../images/gatsby-icon.png';
 import '../styles/base.scss';
 const Navigation = (props) => {
     const { menuLinks } = props.data.site.siteMetadata;
@@ -13,7 +13,7 @@ const Navigation = (props) => {
                         <li key={link.name}>
                             <Link to={link.link}>
                                 <div className="image-icon" alt="logo">
-                                    <img className="img-fluid" src={logoLinks} />
+                                    {/* <img className="img-fluid" src={logoLinks} /> */}
                                 </div>
                                 <h6>{link.name}</h6>
                             </Link>

@@ -3,10 +3,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import leftImage from '../img/left-about-image.jpg'
 import rightImage from '../img/right-about-image.jpg'
-
 const About = () => (
   <Layout>
-    <SEO title="About" />
     <div className="heading">
       <h1>About Us</h1>
       <span>Get More Info About Our Agency</span>
@@ -22,7 +20,7 @@ const About = () => (
                 </div>
                 <div className="col-md-5">
                   <div className="right-about-text">
-                    <h4>Who we are?</h4>
+                    <h4>Test</h4>
                     <p>Fusce neque leo, dapibus sed imperdiet sed, vulputate sed purus. Nam eget justo in nibh facilisis rhoncus. Donec et risus non mauris lobortis convallis. Aliquam id urna quis ante blandit semper.</p>
                     <div className="primary-button">
                       <a href="#">Discover More</a>
@@ -51,5 +49,4 @@ const About = () => (
     </div>
   </Layout>
 )
-
 export default About

@@ -2,11 +2,13 @@
 @import 'partials/mixins';
 @import 'partials/variables';
 @import 'partials/colors';
+@import 'partials/product';
 //components
 @import 'components/header';
 @import 'components/navigation';
 @import 'components/footer';
 @import 'components/video';
+@import 'components/_products';
 
 //Pages
 @import 'pages/home';
@@ -27,7 +29,6 @@
 }
 
 h1 {
-    color: red;
     text-align: center;
 }
 
@@ -77,5 +78,5 @@ h1 {
         -moz-transition: all 0.2s linear;
         -o-transition: all 0.2s linear;
         -webkit-transition: all 0.2s linear;
-}
+    }
 }

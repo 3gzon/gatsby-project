@@ -17,12 +17,12 @@ module.exports = {
         link: '/featured',
       },
       {
-        name: 'Projects',
-        link: '/projects',
-      },
-      {
         name: 'Contact Us',
         link: '/contact',
+      },
+      {
+        name: 'Projects',
+        link: '/projects',
       },
     ],
   },
@@ -38,14 +38,11 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    "gatsby-transformer-json",
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `sidebarItems`,
-        path: `${__dirname}/src/data/`,
-        plugins: [
-          `gatsby-transformer-json`
-        ]
+        path: `${__dirname}/src/data/`
       }
     },
     {

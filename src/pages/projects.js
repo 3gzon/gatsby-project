@@ -1,60 +1,59 @@
-import React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import itemOne from '../img/item-01.jpg'
-import itemTwo from '../img/item-02.jpg'
-import itemThree from '../img/item-03.jpg'
-import itemFour from '../img/item-04.jpg'
-import itemFive from '../img/item-05.jpg'
-import itemSix from '../img/item-06.jpg'
-import itemSeven from '../img/item-07.jpg'
-import itemEight from '../img/item-08.jpg'
+import React from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import Img from 'gatsby-image';
+import '../styles/base.scss';
 
-
-const Projects = () => (
+const ProjectsPage = ({ data }) => (
   <Layout>
-    <SEO title="Projects" />
-    <div className="heading">
-      <h1>Our projects</h1>
-      <span>Here you can check our recent projects</span>
-    </div>
-    <div className="cd-half-width fourth-slide">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12">
-            <div className="content fourth-content">
-              <div className="row">
-                <div className="col-md-3 project-item">
-                  <a href="img/item-01.jpg" data-lightbox="image-1"><img src={itemOne} /></a>
-                </div>
-                <div className="col-md-3 project-item">
-                  <a href="img/item-02.jpg" data-lightbox="image-1"><img src={itemTwo} /></a>
-                </div>
-                <div className="col-md-3 project-item">
-                  <a href="img/item-03.jpg" data-lightbox="image-1"><img src={itemThree} /></a>
-                </div>
-                <div className="col-md-3 project-item">
-                  <a href="img/item-04.jpg" data-lightbox="image-1"><img src={itemFour} /></a>
-                </div>
-                <div className="col-md-3 project-item">
-                  <a href="img/item-05.jpg" data-lightbox="image-1"><img src={itemFive} /></a>
-                </div>
-                <div className="col-md-3 project-item">
-                  <a href="img/item-06.jpg" data-lightbox="image-1"><img src={itemSix} /></a>
-                </div>
-                <div className="col-md-3 project-item">
-                  <a href="img/item-07.jpg" data-lightbox="image-1"><img src={itemSeven} /></a>
-                </div>
-                <div className="col-md-3 project-item">
-                  <a href="img/item-08.jpg" data-lightbox="image-1"><img src={itemEight} /></a>
-                </div>
-              </div>
+    <SEO
+      title="Home"
+      keywords={[`gatsby`, `application`, `react`, `portfolio`]}
+    />
+    <h1>Projects</h1>
+    <div className="project-list bg-white" >
+      {data.allProjectsJson.edges.map(project => (
+        <div key={project.node.id} className="project-list__item">
+          <div className="project-list__thumbnail">
+            <Img fluid={project.node.image.childImageSharp.fluid} />
+          </div>
+          <div className="project-list__content">
+            <h2>{project.node.title}</h2>
+            <div className="project-list__excerpt">
+              {project.node.description}
             </div>
+            <a href={project.node.url}>
+              <button>Test</button>
+            </a>
           </div>
         </div>
-      </div>
+      ))}
     </div>
   </Layout>
-)
+);
 
-export default Projects
+export default ProjectsPage;
+
+export const projectsQuery = graphql`
+  query {
+    allProjectsJson(sort: { order: DESC, fields: [date] }) {
+      edges {
+        node {
+          id
+          title
+          date
+          description
+          url
+          image {
+            childImageSharp {
+              fluid(maxWidth: 1200,maxHeight:1200) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;

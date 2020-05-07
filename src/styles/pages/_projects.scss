@@ -1,37 +1,30 @@
-.fourth-slide {
-    text-align: center;
-    background-color: #fff;
-    width: 100%;
 
-    .heading {
-        h1 {
-            margin-top: 30px;
-            font-size: 38px;
-            text-transform: uppercase;
-            color: #fff;
-            font-weight: 900;
-            letter-spacing: 1px;
-        }
+.project-list {
+    margin: 0;
 
-        span {
-            font-size: 16px;
-            text-transform: uppercase;
-            color: #ffbb05;
-            font-weight: 300;
-            letter-spacing: 0.5px;
-        }
+    &__content {
+        padding: 1rem;
+        text-align: left;
     }
 
-    .fourth-content {
-        padding: 15px 30px;
+    &__excerpt {
+        padding-bottom: 2rem;
+    }
 
-        .project-item {
-            margin: 15px 0px;
+    &__item {
+        display: flex;
+        flex-direction: column;
+
+        @media (min-width: 800px) {
+            flex-direction: row;
         }
 
-        img {
-            width: 100%;
-            overflow: hidden;
-        }
+        padding: 1rem;
+    }
+
+    &__thumbnail {
+        align-self: center;
+        width: 30%;
+        height: 50%;
     }
 }
